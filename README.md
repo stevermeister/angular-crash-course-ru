@@ -1,27 +1,38 @@
-# Myapp
+# Конспект
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+## Инструмент [Angular CLI](https://github.com/angular/angular-cli)
 
-## Development server
+- установка - `npm install -g @angular/cli`
+- создание нового проекта - `ng new myapp --minimal`
+- сборка и запуск - `ng serve`
+- сервер запускается на порту 4200 - http://localhost:4200
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Синтаксис шаблонов
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- базовая интерполяция (или по простому подстановка переменных)
+  - `{{title}}`
+  - `{{1+1}}`
+  - Нет доступа к глобальным переменным!
+- задание свойств элементов
+  - `[class] = "myclass"`
+  - `[src] [alt] [href]`
+  - `[style.color], [style.width.px]`
+- обработка событий
+  - `(click)="changeColor()"`
+  - `(input)="changeColor($event.target.value)"`
+  - `(keydown.enter)    (keydown.shift.enter)`
 
-## Build
+# Передача данных в компонент
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- создаем новый компонент - `ng g c child`
+- прописываем декоратор для входящего параметра - `@Input name` 
+- передаем параметр - `<app-child [name]="user"></app-child>`
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+# Полезные ссылки
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- этот код - https://github.com/stevermeister/angular-crash-course-ru
+- в продолжение базового скринкаста - https://learn.javascript.ru/screencast/angular
+- мой твиттер для вопросов и предложений - https://twitter.com/stevermeister
